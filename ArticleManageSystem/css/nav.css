@@ -1,0 +1,54 @@
+﻿header {
+    height: 50px;
+    background: #262626;
+    overflow: hidden;
+}
+
+.logo {
+    padding-left: 20px;
+    float: left;
+    line-height: 50px;
+    font-size: 1.4em;
+}
+
+.logo a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav {
+    float: right;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+nav ul li {
+    color: #a2a0a0;
+    float: left;
+    transition: background 0.5s ease;
+}
+
+nav ul li:hover {
+    color: white;
+    background: #aaa;
+}
+
+nav ul li.active {
+    color: white;
+    background: #343831;
+}
+
+nav ul li a {
+    display: block;
+    padding: 0 20px;
+    line-height: 50px;
+    color: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+}

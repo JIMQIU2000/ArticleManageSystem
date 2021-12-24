@@ -1,0 +1,146 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f3f3f3;
+}
+
+.head-line {
+    height: 85px;
+    border-bottom: 1px #dadada solid;
+    overflow: hidden;
+}
+
+.desc {
+    float: left;
+    margin-left: 34px;
+    line-height: 45px;
+}
+
+.search-container {
+    float: right;
+    margin-right: 45px;
+    margin-top: 20px;
+    border: #dadada 1px solid;
+    width: 550px;
+    height: 45px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.nav-search {
+    width: 50%;
+    height: 45px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.search-content {
+    float: left;
+    line-height: 45px;
+}
+
+.search-content input {
+    width: 500px;
+    height: 30px;
+    font-size: large;
+    border: 0px;
+    margin-left: 5px;
+}
+
+.search-content input:focus {
+    outline: none;
+}
+
+.search {
+    /* background-color: #fff; */
+    float: left;
+    line-height: 45px;
+}
+
+.search a {
+    text-decoration: none;
+    color: #000;
+}
+
+.manage-contianer {
+    width: 1100px;
+    min-height: 900px;
+    margin: 20px auto;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.article-card {
+    position: relative;
+    width: 100%;
+    min-height: 140px;
+    border-radius: 5px;
+    border-bottom: 1px solid #e7e7e7;
+    overflow: hidden;
+}
+
+.article-pic {
+    float: left;
+    width: 154px;
+    height: 96px;
+    margin-top: 22px;
+    margin-left: 35px;
+    border-radius: 5px;
+}
+
+.article-pic img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.meta {
+    float: left;
+    margin-top: 22px;
+    margin-left: 20px;
+}
+
+.article-title {
+    /* float: left; */
+    font-size: 20px;
+    line-height: 20px; 
+}
+
+.article-title a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+}
+
+.article-title a:hover {
+    color: #00a1d6;
+}
+
+.article-time {
+    margin-top: 15px;
+}
+
+.article-comment-record {
+    margin-top: 20px;
+}
+
+.operation {
+    position: absolute;
+    top: 54px;
+    right: 50px;
+}
+
+.operation input {
+    width: 84px;
+    height: 32px;
+    margin-left: 10px;
+    border: #dadada 1px solid;
+    background-color: #fff;
+}
+
+.operation input:hover {
+    border: 1px #00a1d6 solid;
+    color: #00a1d6;
+}

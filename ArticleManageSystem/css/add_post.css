@@ -1,0 +1,123 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f3f3f3;
+}
+
+header {
+    height: 50px;
+    background: #262626;
+    overflow: hidden;
+}
+
+.logo {
+    /* position: absolute; */
+    padding-left: 20px;
+    float: left;
+    line-height: 50px;
+    /* text-transform: uppercase; */
+    font-size: 1.4em;
+}
+
+.logo a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.post-contianer {
+    width: 70%;
+    background-color: #fff;
+    min-height: 900px;
+    margin: 10px auto;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.contianer {
+    width: 70%;
+    margin: 30px auto;
+    border-radius: 5px;
+    border: 1px solid rgb(221, 221, 221);
+}
+
+.title {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.title textarea{
+    width: 80%;
+    height: 90px;
+    border: 0;
+    padding-left: 30px;
+    resize: none;
+    font-size: xx-large;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 1000;
+    margin: 50px 8%;
+}
+
+.title textarea:focus {
+    outline: none;
+}
+
+.classify {
+    width: 80%;
+    height: 50px;
+    margin: 20px 10%;
+    padding-left: 15px;
+    font-size: larger;
+}
+
+.classify select {
+    width: 50px;
+    height: 25px;
+}
+
+.classify select option {
+    font-size: larger;
+}
+
+.content {
+    width: 80%;
+    height: 300px;
+    margin: 20px 8%;
+}
+
+.content textarea {
+    border: 0;
+    width: 100%;
+    height: 300px;
+    padding-left: 30px;
+    border-bottom: #d1d1d1 1px solid;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    resize: none;
+}
+
+.content textarea:focus {
+    outline: none;
+}
+
+.submit-contianer {
+    width: 80%;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.submit-contianer input {
+    width: 130px;
+    height: 42px;
+    background-color: #37c8fc;
+    color: #fff;
+    border: 0;
+    border-radius: 20px;
+    font-size: medium;
+}
+
+.submit-contianer input:hover {
+    background-color: #6bd7ff;
+    cursor: pointer;
+}

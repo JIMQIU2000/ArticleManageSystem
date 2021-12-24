@@ -1,0 +1,43 @@
+﻿.classify {
+    float: left;
+    position: sticky;
+    top: 20px;
+    width: 230px;
+    height: 300px;
+    margin-top: 20px;
+    margin-left: 12%;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.classify ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 10%;
+}
+
+.classify ul li {
+    font-size: x-large;
+    line-height: 50px;
+}
+
+.classify ul li span {
+    position: absolute;
+    right: 20px ;
+}
+
+/* .classify ul li:hover {
+    background-color: #000;
+    transition: .3s ease-in-out;
+} */
+
+.classify ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.classify ul li a:hover {
+    color: #00a1d6;
+    transition: .3s ease-in-out;
+}

@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>发布文章</title>
+    <link rel="stylesheet" href="../css/add_post.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <script src="../js/jquery-1.4.1.js"></script>
+    <script src="../js/add_post.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="#" id="username">用户名</a>
+        </div>
+        <nav>
+            <ul class="navlist">
+                <li><a href="./home.html">首页</a></li>
+                <li><a href="./add_post.html">发布</a></li>
+                <li><a href="./manage.html">管理</a></li>
+                <li><a href="./login.html">登录</a></li>
+                <li><a href="./regist.html">注册</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="post-contianer">
+        <div class="contianer">
+            <div class="title">
+                <textarea name="" id="title" cols="30" rows="10" placeholder="请输入标题"></textarea>
+            </div>
+
+            <div class="classify">
+                <span>请选择分区 </span>
+                <select name="" id="classification">
+                    <option value="">国内</option>
+                    <option value="">国际</option>
+                    <option value="">体育</option>
+                    <option value="">科技</option>
+                    <option value="">财经</option>
+                    <option value="">其他</option>
+                </select>
+                <!-- <input class="date" type="date" id="create_time"> -->
+            </div>
+
+            <div class="content">
+                <textarea name="" id="content" cols="30" rows="10" placeholder="请输入正文"></textarea>
+            </div>
+
+            <div class="submit-contianer">
+                <input type="button" id="sumbit" value="提交文章">
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,121 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    /* background-color: #99ccff; */
+    background: url(../img/background.bc725153.png);
+    background-repeat: no-repeat;
+    background-attachment:fixed
+}
+
+.nav-search {
+    position: absolute;
+    top: 3px;
+    left: 500px;
+    width: 50%;
+    height: 40px;
+    /* margin: 20px auto; */
+    text-align: center;
+    /* background-color: #fff; */
+}
+
+.search-container {
+    margin: 2px auto;
+    background-color: rgb(251, 251, 251);
+    width: 550px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.search-content {
+    float: left;
+    line-height: 40px;
+}
+
+.search-content input {
+    width: 500px;
+    height: 30px;
+    font-size: 17px;
+    margin-left: 5px;
+}
+
+.search {
+    /* background-color: #fff; */
+    float: left;
+    line-height: 40px;
+}
+
+.search .icon-search{
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+}
+
+.content {
+    width: 950px;
+    min-height: 800px;
+    background-color: #fff;
+    /* margin-top: 20px; */
+    margin: 20px auto;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.article {
+    width: 100%;
+    height: 200px;
+    /* background-color: red; */
+    overflow: hidden;
+    border-bottom: #d2d8e2 1px solid;
+    border-radius: 5px;
+}
+
+.pic {
+    width: 30%;
+    height: 95%;
+    margin-top: 5px;
+    margin-left: 5px;
+    float: left;
+}
+
+.pic img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.title {
+    float: left;
+    margin-left: 3%;
+    width: 65%;
+    height: 120px;
+}
+
+.title h2 a {
+    text-decoration: none;
+    color: #262626;
+}
+
+.title h2 a:hover {
+    color: #00a1d6;
+    transition: .3s ease-in-out;
+}
+
+.create-user {
+    float: left;
+    margin-left: 3%;
+    margin-top: 15px;
+    font-size: large;
+    font-weight: 900;
+}
+
+.create-time {
+    float: left;
+    width: 65%;
+    margin-left: 3%;
+    margin-top: 5px;
+    font-size: large;
+    font-weight: 900;
+}
