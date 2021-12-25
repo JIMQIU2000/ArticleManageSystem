@@ -80,6 +80,19 @@ namespace ArticleManageSystem
         }
 
         [WebMethod]
+        public string UploadImg ()
+        {
+            string uploadPath = "./mediaupload/";
+            HttpPostedFile myFile = HttpContext.Current.Request.Files["file"];
+            string fileName = myFile?.FileName ?? "";
+            string fileFormat = fileName.Split('.')[fileName.Split('.').Length - 1]; // 以“.”截取，获取“.”后面的文件后缀
+            string name = fileName.Split('.')[0];
+            //Regex imageFormat = new Regex(@"^(sldx)|(dotx)|(docx)|(doc)|(xls)|(xlsm)|(xlsb)|(xltx)|(xlsx)|(potx)|(ppsx)|(pptx)|(txt)|(pdf)");
+            //myFile.SaveAs(uploadPath);
+            return "";
+        }   
+
+        [WebMethod]
         public List<Comment> CommentDisplay(string ArticleID)
         {
             ArticleManageEntities ef = new ArticleManageEntities();
@@ -123,12 +136,12 @@ namespace ArticleManageSystem
         }
 
         [WebMethod]
-        public List<Article> GetArticleListDataManage(string UserID)
+        public List<ManageArticleList> GetArticleListDataManage(string UserID)
         {
             int id = int.Parse(UserID);
             ArticleManageEntities ef = new ArticleManageEntities();
-            string SQL = "SELECT * FROM Article WHERE UserID="+id;
-            List<Article> list = ef.Database.SqlQuery<Article>(SQL).ToList();
+            string SQL = "SELECT * FROM ManageArticleList WHERE UserID=" + id;
+            List<ManageArticleList> list = ef.Database.SqlQuery<ManageArticleList>(SQL).ToList();
             return list;
         }
 
@@ -142,6 +155,18 @@ namespace ArticleManageSystem
         }
 
         [WebMethod]
+        public string DeleteArticleByID(string ArticleID)
+        {
+            ArticleManageEntities ef = new ArticleManageEntities();
+            string SQL = "DELETE FROM Article WHERE ArticleID = '" + ArticleID + "'";
+            int i = ef.Database.ExecuteSqlCommand(SQL);
+            if (i == 1)
+                return "true";
+            else
+                return "false";
+        }
+
+        [WebMethod]
         public List<ArticleInfo> SearchArticle(string searchContent)
         {
             ArticleManageEntities ef = new ArticleManageEntities();
@@ -152,13 +177,13 @@ namespace ArticleManageSystem
         }
 
         [WebMethod]
-        public List<ArticleInfo> SearchArticleManage(string UserID, string searchContent)
+        public List<ManageArticleList> SearchArticleManage(string UserID, string searchContent)
         {
             int id = int.Parse(UserID);
             ArticleManageEntities ef = new ArticleManageEntities();
-            string SQL = "SELECT * FROM ArticleInfo WHERE Title LIKE '%" + searchContent + "%' OR ArticleContent LIKE '%" + searchContent + "%' OR UserName LIKE '%" + searchContent + "%' WHERE UserID = " + id;
+            string SQL = "SELECT * FROM ManageArticleList WHERE Title LIKE '%" + searchContent + "%' AND UserID = " + id;
 
-            List<ArticleInfo> list = ef.Database.SqlQuery<ArticleInfo>(SQL).ToList();
+            List<ManageArticleList> list = ef.Database.SqlQuery<ManageArticleList>(SQL).ToList();
             return list;
         }
 

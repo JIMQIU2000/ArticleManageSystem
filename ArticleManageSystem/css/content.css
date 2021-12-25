@@ -7,6 +7,19 @@
     background-attachment:fixed
 }
 
+.content-containner {
+    width: 1400px;
+    margin: 0 auto;
+    display: -webkit-box;
+    /* display: -ms-flexbox; */
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    /* -ms-flex-direction: row; */
+    flex-direction: row;
+    position: relative;
+}
+
 .article {
     margin: 20px auto;
     width: 950px;

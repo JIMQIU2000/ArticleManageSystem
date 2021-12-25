@@ -54,7 +54,6 @@ function recommendArticle(){
             recommendList = data.d;
             var aStr = "";
             for (var i = 0; i < recommendList.length; i++) {
-                console.log(recommendList[i].CommentCount);
                 aStr += "<div class='topic'><div class='hashtag'></div><div class='topic_title'><a href='./content.html?id="+recommendList[i].ArticleID+"'>" + recommendList[i].Title + "</a></div><div class='comment-hit'>" + recommendList[i].CommmentCount + "条评论</div></div>";
             }
             $(".recommend-containner").html(aStr);

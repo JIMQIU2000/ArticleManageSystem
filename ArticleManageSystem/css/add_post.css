@@ -101,6 +101,16 @@ header {
     outline: none;
 }
 
+.img-upload {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.img-upload input {
+    width: 400px;
+    height: 40px;
+}
+
 .submit-contianer {
     width: 80%;
     margin: 30px auto;

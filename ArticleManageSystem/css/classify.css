@@ -1,11 +1,11 @@
 ﻿.classify {
-    float: left;
+    /* float: left; */
     position: sticky;
     top: 20px;
     width: 230px;
     height: 300px;
     margin-top: 20px;
-    margin-left: 12%;
+    margin-right: 8px;
     background-color: #fff;
     border-radius: 5px;
 }

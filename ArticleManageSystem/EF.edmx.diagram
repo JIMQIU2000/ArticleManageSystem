@@ -10,6 +10,7 @@
         <EntityTypeShape EntityType="ArticleManageModel.UserInfo" Width="1.5" PointX="4.25" PointY="0.75" />
         <EntityTypeShape EntityType="ArticleManageModel.ArticleInfo" Width="1.5" PointX="0.75" PointY="3.375" />
         <EntityTypeShape EntityType="ArticleManageModel.RecommendArticle" Width="1.5" PointX="2.5" PointY="3.375" />
+        <EntityTypeShape EntityType="ArticleManageModel.ManageArticleList" Width="1.5" PointX="4.25" PointY="3.375" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

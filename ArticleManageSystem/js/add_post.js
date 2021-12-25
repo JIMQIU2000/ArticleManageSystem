@@ -27,8 +27,31 @@ function datetime() {
     return datetime = year+"-"+month+"-"+date;
 }
 
+function uploadImg () {
+    var formData = new FormData();
+    formData.append('file', $('#UploadImage')[0].files[0]);
+    $.ajax({
+        type: 'Post',
+        url: '../WebService1.asmx/UploadImg',
+        data: formData,
+        success: function (status) {
+            alert("1111");
+            if (status != 'error') {
+                var my_path = "MediaUploader/" + status;
+                $("#myUploadedImg").attr("src", my_path);
+            }
+        },
+        processData: false,
+        contentType: false,
+        error: function () {
+            alert("Whoops something went wrong!");
+        }
+    });
+}
+
 $(document).ready(function () {
     userIsLogin();
+    
     $("#sumbit").click(function () {
         if (currentUser != null) {
             var UserID = currentUser.UserID;
@@ -47,7 +70,7 @@ $(document).ready(function () {
                 success: function (response) {
                     if (response.d == "true") {
                         alert("发布成功");
-                        window.location.href = "home.html";
+                        // window.location.href = "home.html";
                     } else {
                         alert("发布失败");
                     }
@@ -56,6 +79,7 @@ $(document).ready(function () {
                     alert(err);
                 }
             });
+            uploadImg();
         } else {
             alert("需要登录才可以发布文章!");
         }

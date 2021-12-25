@@ -52,6 +52,20 @@
     cursor: pointer;
 }
 
+.home-contianner {
+    width: 1400px;
+    margin: 0 auto;
+    display: -webkit-box;
+    /* display: -ms-flexbox; */
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    /* -ms-flex-direction: row; */
+    flex-direction: row;
+    position: relative;
+    /* z-index: -1; */
+}
+
 .content {
     width: 950px;
     min-height: 800px;
@@ -59,7 +73,7 @@
     /* margin-top: 20px; */
     margin: 20px auto;
     border-radius: 5px;
-    z-index: 1000;
+    /* z-index: 1000; */
 }
 
 .article {
@@ -91,6 +105,7 @@
     margin-left: 3%;
     width: 65%;
     height: 120px;
+    margin-top: -10px;
 }
 
 .title h2 a {
@@ -106,7 +121,7 @@
 .create-user {
     float: left;
     margin-left: 3%;
-    margin-top: 15px;
+    margin-top: 20px;
     font-size: large;
     font-weight: 900;
 }

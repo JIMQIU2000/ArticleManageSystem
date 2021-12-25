@@ -54,6 +54,21 @@
           <Property Name="ArticleContent" Type="text" Nullable="false" />
         </EntityType>
         <!--生成过程中发现错误:
+警告 6002: 表/视图“ArticleManage.dbo.ManageArticleList”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="ManageArticleList">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="ArticleID" />
+            <PropertyRef Name="Title" />
+            <PropertyRef Name="CreateTime" />
+          </Key>
+          <Property Name="UserID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ArticleID" Type="int" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="CommentCount" Type="int" />
+        </EntityType>
+        <!--生成过程中发现错误:
 警告 6002: 表/视图“ArticleManage.dbo.RecommendArticle”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
         <EntityType Name="RecommendArticle">
           <Key>
@@ -78,6 +93,15 @@
 [ArticleInfo].[ArticleContent] AS [ArticleContent]
 FROM [dbo].[ArticleInfo] AS [ArticleInfo]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="ManageArticleList" EntityType="Self.ManageArticleList" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[ManageArticleList].[UserID] AS [UserID], 
+[ManageArticleList].[ArticleID] AS [ArticleID], 
+[ManageArticleList].[Title] AS [Title], 
+[ManageArticleList].[CreateTime] AS [CreateTime], 
+[ManageArticleList].[CommentCount] AS [CommentCount]
+FROM [dbo].[ManageArticleList] AS [ManageArticleList]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="RecommendArticle" EntityType="Self.RecommendArticle" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
 [RecommendArticle].[ArticleID] AS [ArticleID], 
@@ -96,6 +120,7 @@ FROM [dbo].[RecommendArticle] AS [RecommendArticle]</DefiningQuery>
           <EntitySet Name="UserInfo" EntityType="ArticleManageModel.UserInfo" />
           <EntitySet Name="ArticleInfo" EntityType="ArticleManageModel.ArticleInfo" />
           <EntitySet Name="RecommendArticle" EntityType="ArticleManageModel.RecommendArticle" />
+          <EntitySet Name="ManageArticleList" EntityType="ArticleManageModel.ManageArticleList" />
         </EntityContainer>
         <EntityType Name="Article">
           <Key>
@@ -151,6 +176,19 @@ FROM [dbo].[RecommendArticle] AS [RecommendArticle]</DefiningQuery>
           <Property Name="ArticleID" Type="Int32" Nullable="false" />
           <Property Name="Title" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="CommmentCount" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ManageArticleList">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="ArticleID" />
+            <PropertyRef Name="Title" />
+            <PropertyRef Name="CreateTime" />
+          </Key>
+          <Property Name="UserID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ArticleID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CommentCount" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -209,6 +247,17 @@ FROM [dbo].[RecommendArticle] AS [RecommendArticle]</DefiningQuery>
                 <ScalarProperty Name="CommmentCount" ColumnName="CommmentCount" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="ArticleID" ColumnName="ArticleID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ManageArticleList">
+            <EntityTypeMapping TypeName="ArticleManageModel.ManageArticleList">
+              <MappingFragment StoreEntitySet="ManageArticleList">
+                <ScalarProperty Name="CommentCount" ColumnName="CommentCount" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ArticleID" ColumnName="ArticleID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

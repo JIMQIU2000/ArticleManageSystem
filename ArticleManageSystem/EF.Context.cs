@@ -30,5 +30,6 @@ namespace ArticleManageSystem
         public DbSet<UserInfo> UserInfo { get; set; }
         public DbSet<ArticleInfo> ArticleInfo { get; set; }
         public DbSet<RecommendArticle> RecommendArticle { get; set; }
+        public DbSet<ManageArticleList> ManageArticleList { get; set; }
     }
 }
