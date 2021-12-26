@@ -64,6 +64,15 @@ namespace ArticleManageSystem
             }
         }
 
+        [WebMethod(EnableSession = true)]
+        public void UserLoginOut()
+        {
+            if (HttpContext.Current.Session["userinfo"] != null)
+                HttpContext.Current.Session["userinfo"] = null;
+            else
+                return;
+        }
+
         [WebMethod]
         public string AddPost(string UserID, string Title, string Classify, string CreateTime, string ArticleContent)
         {
@@ -130,19 +139,28 @@ namespace ArticleManageSystem
         {
             ArticleManageEntities ef = new ArticleManageEntities();
             
-            string SQL = "SELECT * FROM ArticleInfo WHERE Classify='" + Classify + "'";
+            string SQL = "SELECT * FROM ArticleInfo WHERE Classify='" + Classify + "'ORDER BY CreateTime DESC";
             List<ArticleInfo> list = ef.Database.SqlQuery<ArticleInfo>(SQL).ToList();
             return list;
         }
 
         [WebMethod]
-        public List<ManageArticleList> GetArticleListDataManage(string UserID)
+        public List<ManageArticleList> GetArticleListDataManage(string UserID, string role)
         {
             int id = int.Parse(UserID);
             ArticleManageEntities ef = new ArticleManageEntities();
-            string SQL = "SELECT * FROM ManageArticleList WHERE UserID=" + id;
-            List<ManageArticleList> list = ef.Database.SqlQuery<ManageArticleList>(SQL).ToList();
-            return list;
+            if (role == "user")
+            {
+                string SQL = "SELECT * FROM ManageArticleList WHERE UserID=" + id;
+                List<ManageArticleList> list = ef.Database.SqlQuery<ManageArticleList>(SQL).ToList();
+                return list;
+            }
+            else 
+            {
+                string SQL = "SELECT * FROM ManageArticleList";
+                List<ManageArticleList> list = ef.Database.SqlQuery<ManageArticleList>(SQL).ToList();
+                return list;
+            }
         }
 
         [WebMethod]
@@ -170,7 +188,7 @@ namespace ArticleManageSystem
         public List<ArticleInfo> SearchArticle(string searchContent)
         {
             ArticleManageEntities ef = new ArticleManageEntities();
-            string SQL = "SELECT * FROM ArticleInfo WHERE Title LIKE '%"+ searchContent +"%' OR ArticleContent LIKE '%"+ searchContent +"%' OR UserName LIKE '%" + searchContent + "%'";
+            string SQL = "SELECT * FROM ArticleInfo WHERE Title LIKE '%"+ searchContent +"%' OR ArticleContent LIKE '%"+ searchContent +"%' OR UserName LIKE '%" + searchContent + "%' ORDER BY CreateTime DESC";
             
             List<ArticleInfo> list = ef.Database.SqlQuery<ArticleInfo>(SQL).ToList();
             return list;

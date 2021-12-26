@@ -38,31 +38,6 @@ nav {
     position: relative;
 }
 
-.info-popover {
-    position: absolute;
-    width: 120px;
-    height: 0px;
-    right: 263px;
-    overflow: hidden;
-    border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-    transition: all .25s ease-in-out;
-    z-index: 100;
-    text-align: center;
-}
-
-.info-popover ul li {
-    width: 100%;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    line-height: 30px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
 nav ul li:hover {
     color: white;
     background: #aaa;
@@ -89,4 +64,45 @@ nav ul li a {
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     text-decoration: none;
+}
+
+
+.info-popover {
+    position: absolute;
+    width: 125px;
+    height: 0px;
+    right: 258px;
+    font-size: 18px;
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    transition: all .25s ease-in-out;
+    z-index: 100;
+    text-align: center;
+}
+
+.user-space {
+    width: 100%;
+    margin-top: 10px;
+    line-height: 35px;
+    color: #343831;
+    border-bottom: #e4e4e4 1px solid;
+    cursor: pointer;
+}
+
+.user-space:hover {
+    background-color: #f1f1f1;
+}
+
+.logout{
+    width: 100%;
+    color: #262626;
+    line-height: 35px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.logout:hover {
+    background-color: #f1f1f1;
 }

@@ -82,16 +82,19 @@
     <Content Include="font\iconfont.woff" />
     <Content Include="font\iconfont.woff2" />
     <Content Include="html\classify.html" />
-    <Content Include="html\uploadtest.html" />
     <Content Include="img\article-application.f0ec006.png" />
     <Content Include="img\article_empty.518ee70.png" />
     <Content Include="img\background.bc725153.png" />
+    <Content Include="img\rocket_frame.f7563b84.png" />
+    <Content Include="img\rocket_top.bcc748c3.png" />
     <Content Include="js\add_comment.js" />
     <Content Include="js\add_post.js" />
     <Content Include="js\classify.js" />
     <Content Include="js\content.js" />
     <Content Include="js\edit.js" />
+    <Content Include="js\gototop.js" />
     <Content Include="js\home.js" />
+    <Content Include="js\logout.js" />
     <Content Include="WebService1.asmx" />
     <EntityDeploy Include="EF.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

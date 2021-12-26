@@ -8,17 +8,27 @@
     <link href="../css/nav.css" rel="stylesheet" />
     <link href="../css/classify.css" rel="stylesheet" />
     <link href="../css/recommend.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/gototop.css">
     <script src="../js/jquery-1.4.1.js"></script>
     <script src="../js/classify.js"></script>
+    <script src="../js/gototop.js"></script>
+    <script src="../js/logout.js"></script>
 </head>
 <body>
     <header>
         <div class="logo">
-            <a href="#" id="username">用户名</a>
+            <a href="./home.html">首页</a>
+            
         </div>
         <nav>
             <ul class="navlist">
-                <li><a href="./home.html">首页</a></li>
+                <li>
+                    <a href="#" id="username">用户名</a>
+                    <div class="info-popover">
+                        <div class="user-space">个人空间</div>
+                        <div class="logout"><span class="iconfont icon-logout"></span>退出登录</div>
+                    </div>
+                </li>
                 <li><a href="./add_post.html">发布</a></li>
                 <li><a href="./manage.html">管理</a></li>
                 <li><a href="./login.html">登录</a></li>
@@ -72,6 +82,8 @@
                     <div class="comment-hit">3条评论</div>
                 </div> -->
         </div>
+    </div>
+    <div class="goto-top">
     </div>
 </body>
 </html>

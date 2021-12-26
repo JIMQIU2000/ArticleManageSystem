@@ -67,6 +67,7 @@
 }
 
 .content {
+    position: relative;
     width: 950px;
     min-height: 800px;
     background-color: #fff;
@@ -83,6 +84,16 @@
     overflow: hidden;
     border-bottom: #d2d8e2 1px solid;
     border-radius: 5px;
+}
+
+.info-wrp{
+    position: absolute;
+    top: 140px;
+    left: 340px;
+}
+
+.info-wrp p {
+    margin-top: 30px;
 }
 
 .pic {

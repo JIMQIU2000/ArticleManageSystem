@@ -8,7 +8,8 @@ function getQueryStringByName(name) {
     return result[1];
 }
 
-function userIsLogin() {
+function userIsLogin()
+{
     $.ajax({
         type: "Post",
         // 方法所在页面和方法名
@@ -20,6 +21,7 @@ function userIsLogin() {
             var info;
             if (currentUser == null) {
                 info = "当前未登陆！";
+                $(".info-popover").hide();
             } else {
                 info = currentUser.UserName;
             }

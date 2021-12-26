@@ -1,0 +1,41 @@
+.goto-top {
+    position: fixed;
+    right: 130px;
+    bottom: 50px;
+    width: 150px;
+    height: 174px;
+    cursor: pointer;
+    z-index: 998;
+    background-position: 0 0;
+    text-align: center;
+    background-image: url(../img/rocket_top.bcc748c3.png);
+    background-repeat: no-repeat;
+}
+
+.goto-top:hover {
+    background-image: url(../img/rocket_frame.f7563b84.png);
+    -webkit-animation: rocket-data-v-37d58309 steps(1, start) 0.5s infinite;
+    animation: rocket-data-v-37d58309 steps(1, start) 0.5s infinite;
+}
+
+@keyframes rocket-data-v-37d58309 {
+    0% {
+        background-position: 0 0;
+    }
+
+    25% {
+        background-position: -150px 0;
+    }
+
+    50% {
+        background-position: -300px 0;
+    }
+
+    75% {
+        background-position: -450px 0;
+    }
+
+    100% {
+        background-position: -600px 0;
+    }
+}

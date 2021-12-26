@@ -50,8 +50,10 @@
             </div>
 
             <div class="img-upload">
-                <input type="file" accept="image/*" id="UploadImage">
-                <img id="myUploadedImg" alt="Photo" style="width:180px;"> 
+                <form action="WebForm1.aspx" method="post">
+                    <input type="file" accept="image/*" id="UploadImage" onchange="imgPreview(this)">
+                    <img id="preview" alt="Photo" style="width:180px;">
+                </form>
             </div>
 
             <div class="submit-contianer">

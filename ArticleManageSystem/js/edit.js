@@ -47,8 +47,7 @@ function userIsLogin() {
             }
             $("#username").html(info);
         },
-        error: function (er) {
-        }
+        error: function (er) {}
     });
 }
 $(document).ready(function () {
@@ -62,26 +61,32 @@ $(document).ready(function () {
         var Classify = $("#classify option:selected").text();
         var content = $("#content").val();
 
-        var jsonData = "{'Title': '" + title+ "', 'Classify':'" + Classify + "', 'ArticleContent':'" + content + "', 'ArticleID':'" + id + "'}";
-        $.ajax({
-            type: "Post",
-            url: "../WebService1.asmx/EditPost",
-            contentType: "application/json; charset=utf-8",
-            data: jsonData,
-            dataType: "json",
-            success: function (response) {
-                if (response.d == "true") {
-                    alert("修改成功");
-                    window.location.href = "home.html";
+        if (title == '') {
+            alert("文章标题不能为空");
+            return;
+        } else if (content == '') {
+            alert("文章内容不能为空");
+            return;
+        } else {
+            var jsonData = "{'Title': '" + title + "', 'Classify':'" + Classify + "', 'ArticleContent':'" + content + "', 'ArticleID':'" + id + "'}";
+            $.ajax({
+                type: "Post",
+                url: "../WebService1.asmx/EditPost",
+                contentType: "application/json; charset=utf-8",
+                data: jsonData,
+                dataType: "json",
+                success: function (response) {
+                    if (response.d == "true") {
+                        alert("修改成功");
+                        window.location.href = "home.html";
+                    } else {
+                        alert("修改失败");
+                    }
+                },
+                error: function (err) {
+                    alert(err);
                 }
-                else {
-                    alert("修改失败");
-                }
-            },
-            error: function (err) {
-                alert(err);
-            }
-        });
+            });
+        }
     });
 })
-

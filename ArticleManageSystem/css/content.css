@@ -66,6 +66,10 @@
     font-weight: bolder;
 }
 
+.content p {
+    white-space: pre-wrap;
+}
+
 .add-comment {
     position: relative;
     width: 950px;

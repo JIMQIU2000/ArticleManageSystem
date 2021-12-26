@@ -22,6 +22,7 @@ function userIsLogin() {
             if (currentUser == null) {
                 info = "当前未登录！";
                 $("#currentUser").html("游客");
+                $(".info-popover").hide();
             } else {
                 info = currentUser.UserName;
                 $("#currentUser").html(currentUser.UserName);
@@ -68,28 +69,33 @@ function AddComment(id) {
             alert("需要登录才能发表评论！");
         } else {
             var ArticleComment = $("#comment").val();
-            var UserID = currentUser.UserID;
-            var UserName = currentUser.UserName;
-            var ArticleID = id;
-            var info = "{'UserID' : '" + UserID + "', 'UserName': '" + UserName + "', 'ArticleID': '" + ArticleID + "', 'Comment' : '" + ArticleComment + "'}";
-            $.ajax({
-                type: "Post",
-                url: "../WebService1.asmx/AddComment",
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                data: info,
-                success: function (response) {
-                    if (response.d == "true") {
-                        alert("发布成功");
-                        window.location.href = "content.html?id="+id;
-                    } else {
-                        alert("发布失败");
+            if (ArticleComment == '') {
+                alert("评论内容不能为空！");
+                return;
+            }else{
+                var UserID = currentUser.UserID;
+                var UserName = currentUser.UserName;
+                var ArticleID = id;
+                var info = "{'UserID' : '" + UserID + "', 'UserName': '" + UserName + "', 'ArticleID': '" + ArticleID + "', 'Comment' : '" + ArticleComment + "'}";
+                $.ajax({
+                    type: "Post",
+                    url: "../WebService1.asmx/AddComment",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    data: info,
+                    success: function (response) {
+                        if (response.d == "true") {
+                            alert("发布成功");
+                            window.location.href = "content.html?id="+id;
+                        } else {
+                            alert("发布失败");
+                        }
+                    },
+                    error: function (err) {
+                        alert(err);
                     }
-                },
-                error: function (err) {
-                    alert(err);
-                }
-            });
+                });
+            }
         }
     });
 }
@@ -130,7 +136,6 @@ function recommendArticle(){
             recommendList = data.d;
             var aStr = "";
             for (var i = 0; i < recommendList.length; i++) {
-                console.log(recommendList[i].CommentCount);
                 aStr += "<div class='topic'><div class='hashtag'></div><div class='topic_title'><a href='./content.html?id="+recommendList[i].ArticleID+"'>" + recommendList[i].Title + "</a></div><div class='comment-hit'>" + recommendList[i].CommmentCount + "条评论</div></div>";
             }
             $(".recommend-containner").html(aStr);

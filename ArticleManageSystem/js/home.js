@@ -12,6 +12,7 @@ function userIsLogin()
             var info;
             if (currentUser == null) {
                 info = "当前未登陆！";
+                $(".info-popover").hide();
             } else {
                 info = currentUser.UserName;
             }
@@ -86,10 +87,16 @@ $(document).ready(function () {
             success: function (response) {
                 articleList = response.d;
                 var aStr = "";
-                for (var i = 0; i < articleList.length; i++) {
-                    aStr += "<div class='article'><div class='pic'><img src='../img/FLAMING MOUNTAIN.JPG'></div><div class='title'><h2><a href='./content.html?id=" + articleList[i].ArticleID + "'>" + articleList[i].Title + "</a></h2></div><div class='create-user'><span>用户：" + articleList[i].UserName + "</span><span></span></div><div class='create-time'><span>创建时间：</span><span>" + ChangeDateFormat(articleList[i].CreateTime) + "</span></div></div>";
+                if(articleList.length == 0){
+                    aStr = "<div class='info-wrp'><img src='../img/article_empty.518ee70.png'><p>一篇文章都没有，请换个筛选条件</p></div>"
+                    $(".content").html(aStr);
                 }
-                $(".content").html(aStr);
+                else{
+                    for (var i = 0; i < articleList.length; i++) {
+                        aStr += "<div class='article'><div class='pic'><img src='../img/FLAMING MOUNTAIN.JPG'></div><div class='title'><h2><a href='./content.html?id=" + articleList[i].ArticleID + "'>" + articleList[i].Title + "</a></h2></div><div class='create-user'><span>用户：" + articleList[i].UserName + "</span><span></span></div><div class='create-time'><span>创建时间：</span><span>" + ChangeDateFormat(articleList[i].CreateTime) + "</span></div></div>";
+                    }
+                    $(".content").html(aStr);
+                }  
             },
             error: function (err) {
                 alert(err);

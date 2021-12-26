@@ -22,7 +22,7 @@ function userIsLogin() {
 }
 
 function getArticleList() {
-    var dataJson = "{'UserID' : '" + currentUser.UserID + "'}";
+    var dataJson = "{'UserID' : '" + currentUser.UserID + "', 'role': '" + currentUser.role + "'}";
     $.ajax({
         type: "Post", //http通信传参方式
         url: "../WebService1.asmx/GetArticleListDataManage", //服务器端资源
